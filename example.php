@@ -22,13 +22,17 @@
 * @package   MobileVerification EXAMPLE
 */
 
+$s='';
+
 // Simple form to display to gather mobile phone number
 print("<form><input name='s' type=text value='$s'/><input type='submit' value='Submit'></form>");
 print("<hr>");
 
 // Get the input mobile phone number
 // Don't go any further if it is blank
-$mobileNumber=$_GET['s'];
+if(isset($_GET['s'])){
+    $mobileNumber=$_GET['s'];
+}
 if(strlen($mobileNumber)==0) exit;
 
 // Include the class
